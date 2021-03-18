@@ -1,1 +1,11 @@
 @import 'node_modules/bootstrap/scss/bootstrap';
+
+div.box-movie{
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 3%;
+    border-radius: 10px;
+    border: 1px solid lightgrey;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+    box-shadow: 5px 5px 15px 5px #000000;
+}
