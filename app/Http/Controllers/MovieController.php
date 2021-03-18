@@ -29,7 +29,7 @@ class MovieController extends Controller
      */
     public function create()
     {
-        //
+        return view('movies.create');
     }
 
     /**
@@ -38,9 +38,33 @@ class MovieController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    //REQUEST MI RESTITUISCE UNA RICHIESTA HTTP
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        //validation
+        var_dump($data);
+        $movieNew = new Movie();
+        //sto indicendo devi prendere questa colonna e associargli questo dato
+        $movieNew->name = $data['name'];
+        $movieNew->regista = $data['regista'];
+        $movieNew->original_language= $data['original_language'];
+        $movieNew->cost = $data['cost'];
+        $movieNew->trama = $data['trama'];
+        $movieNew->Data_uscita = $data['Data_uscita'];
+        $movieNew->poster = $data['poster'];
+
+
+        
+        //adesso devo salvare questi dati nel db
+        $movieNew->save();
+        //controllare il 
+        dd($movieNew);
+        return redirect()->route('movies.show',$movieNew->find($movieNew->id));
+    
+        
+
+        //.attenzione davide, dopo prova pure il metodo fill!
     }
 
     /**
