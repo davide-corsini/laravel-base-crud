@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
+@section('title','Aggiungi movie')
+
 @section('content')
     <h1>Inserisci nuovo Film</h1>
-    <form methods="post" action="{{route('movies.store')}}">
+    <form method="post" action="{{route('movies.store')}}">
         @method('POST')
         @csrf
         <div class="form-group">

@@ -43,7 +43,7 @@ class MovieController extends Controller
     {
         $data = $request->all();
         //validation
-        var_dump($data);
+        // dd($data);
         $movieNew = new Movie();
         //sto indicendo devi prendere questa colonna e associargli questo dato
         $movieNew->name = $data['name'];
@@ -59,10 +59,11 @@ class MovieController extends Controller
         //adesso devo salvare questi dati nel db
         $movieNew->save();
         //controllare il 
-        dd($movieNew);
+        // dd($movieNew);
+        //*RICORDATELO
+        // return redirect()->route('movies.show',$movieNew->id);
+        //_QUESTO E'SBAGLIATO
         return redirect()->route('movies.show',$movieNew->find($movieNew->id));
-    
-        
 
         //.attenzione davide, dopo prova pure il metodo fill!
     }
