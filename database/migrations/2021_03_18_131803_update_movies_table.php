@@ -14,7 +14,8 @@ class UpdateMoviesTable extends Migration
     public function up()
     {
         Schema::table('movies', function (Blueprint $table) {
-            $table->text('poster')->nullable()->after('trama');
+            $table->string('genere')->after('trama');
+            $table->text('poster')->nullable()->after('genere');
         });
     }
 

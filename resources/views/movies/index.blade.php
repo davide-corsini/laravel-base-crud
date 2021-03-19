@@ -25,7 +25,16 @@
                 <td><p>{{$item->original_language}}</p></td>
                 <td>
                     {{--In teoria lui si aspetta un id ma laravel é forte e puo semplicemente completarlo senza freccia id --}}
-                    <a href="{{ route('movies.show', ['movie' => $item->id]) }}">Dettagli</a>
+                    <a class="btn btn-outline-info" href="{{ route('movies.show', ['movie' => $item->id]) }}">Dettagli</a>
+                    <a class="btn btn-outline-warning" href="{{ route('movies.edit', ['movie' => $item->id]) }}">Modifica</a>
+                    
+                    <form class="d-inline-block" method="post" action="">
+
+                        @csrf
+                        @method('DELETE')
+                        <button type="button" class="btn btn-outline-danger">Delete</button>
+                    </form>
+
                 </td>
             </tr>
         </tbody>
