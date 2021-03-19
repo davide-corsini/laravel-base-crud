@@ -28,7 +28,7 @@
                     <a class="btn btn-outline-info" href="{{ route('movies.show', ['movie' => $item->id]) }}">Dettagli</a>
                     <a class="btn btn-outline-warning" href="{{ route('movies.edit', ['movie' => $item->id]) }}">Modifica</a>
                     
-                    <form class="d-inline-block" method="post" action="">
+                    <form class="d-inline-block" method="post" action="{{ route('movies.destroy', $item->id) }}">
 
                         @csrf
                         @method('DELETE')
