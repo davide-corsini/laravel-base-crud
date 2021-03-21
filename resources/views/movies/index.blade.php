@@ -32,7 +32,8 @@
 
                         @csrf
                         @method('DELETE')
-                        <button type="button" class="btn btn-outline-danger">Delete</button>
+                        {{-- il tag <a></a> non puo mai fare un submit di un form --}}
+                        <button class="btn btn-outline-danger">Delete</button>
                     </form>
 
                 </td>

@@ -40,11 +40,11 @@
             <label for="input-genere">Genere</label>
             <select  name="genere" class="form-select" id="input-genere" aria-label="Disabled select example">
                 <option selected>Scegli Categoria</option>
-                <option value=" {{$movie->genere=='Commedia'?'selected=selected': ''}}" value="commedia">Commedia</option>
-                <option value=" {{$movie->genere=='Fantascienza'?'selected=selected': ''}}">Fantascienza</option>
-                <option value=" {{$movie->genere=='Azione'?'selected=selected': ''}}">Azione</option>
-                <option value=" {{$movie->genere=='Thriller'?'selected=selected': ''}}">Thriller</option>
-                <option value=" {{$movie->genere=='Horror'?'selected=selected': ''}}">Horror</option>
+                <option value="commedia" {{$movie->genere=='commedia'?'selected': ''}} >Commedia</option>
+                <option value="fantascienza" {{$movie->genere=='fantascienza'?'selected': ''}}>Fantascienza</option>
+                <option value="azione" {{$movie->genere=='azione'?'selected': ''}}>Azione</option>
+                <option value="thriller" {{$movie->genere=='thriller'?'selected': ''}}>Thriller</option>
+                <option value="horror" {{$movie->genere=='horror'?'selected': ''}}>Horror</option>
 
             </select>
         </div>
